@@ -14,10 +14,7 @@ trait RelationshipHelpers
         return ! $this->hasRelations() && $this->hasField();
     }
 
-    /**
-     * @return bool
-     */
-    public function hasRelations(): bool
+    public function hasRelations(): int
     {
         return $this->getRelations()->count();
     }

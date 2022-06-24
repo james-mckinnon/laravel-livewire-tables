@@ -70,10 +70,8 @@ trait FilterHelpers
 
     /**
      * Get the filter options.
-     *
-     * @return array
      */
-    public function filter(callable $callback): Filter
+    public function filter(callable $callback): \Rappasoft\LaravelLivewireTables\Views\Filter
     {
         $this->filterCallback = $callback;
 
@@ -82,8 +80,6 @@ trait FilterHelpers
 
     /**
      * Get the filter options.
-     *
-     * @return array
      */
     public function hasFilterCallback(): bool
     {
@@ -103,7 +99,7 @@ trait FilterHelpers
     /**
      * Get the filter options.
      *
-     * @return array
+     * @return null|string
      */
     public function getCustomFilterPillTitle(): ?string
     {
@@ -113,9 +109,9 @@ trait FilterHelpers
     /**
      * Get the filter options.
      *
-     * @return array
+     * @return array|string
      */
-    public function getFilterPillTitle(): string
+    public function getFilterPillTitle()
     {
         return $this->getCustomFilterPillTitle() ?? $this->getName();
     }
@@ -123,7 +119,7 @@ trait FilterHelpers
     /**
      * Get the filter options.
      *
-     * @return array
+     * @return null|string
      */
     public function getFilterPillValue($value): ?string
     {
@@ -143,7 +139,7 @@ trait FilterHelpers
     /**
      * Get the filter options.
      *
-     * @return array
+     * @return null|string
      */
     public function getCustomFilterPillValue(string $value): ?string
     {
@@ -152,8 +148,6 @@ trait FilterHelpers
 
     /**
      * Get the filter options.
-     *
-     * @return array
      */
     public function hasConfigs(): bool
     {
@@ -162,8 +156,6 @@ trait FilterHelpers
     
     /**
      * Get the filter options.
-     *
-     * @return array
      */
     public function hasConfig(string $key): bool
     {

@@ -21,9 +21,7 @@ trait ColumnHelpers
     }
 
     /**
-     * @param  DataTableComponent  $component
-     *
-     * @return $this
+     * @param DataTableComponent  $component
      */
     public function getHash(): string
     {
@@ -261,9 +259,9 @@ trait ColumnHelpers
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getSortingPillTitle(): string
+    public function getSortingPillTitle(): ?string
     {
         if ($this->hasCustomSortingPillTitle()) {
             return $this->getCustomSortingPillTitle();
@@ -297,11 +295,11 @@ trait ColumnHelpers
     }
 
     /**
-     * @param  string  $direction
+     * @param string  $direction
      *
-     * @return string
+     * @return array|null|string
      */
-    public function getCustomSortingPillDirections(string $direction): string
+    public function getCustomSortingPillDirections(string $direction)
     {
         if ($direction === 'asc') {
             return $this->sortingPillDirectionAsc;
@@ -389,9 +387,7 @@ trait ColumnHelpers
     }
 
     /**
-     * @param  callable  $callback
-     *
-     * @return $this
+     * @param callable  $callback
      */
     public function isVisible(): bool
     {
@@ -532,10 +528,7 @@ trait ColumnHelpers
         return $value;
     }
 
-    /**
-     * @return bool
-     */
-    public function arrayToAttributes(array $attributes)
+    public function arrayToAttributes(array $attributes): string
     {
         return join(' ', array_map(function ($key) use ($attributes) {
             if (is_bool($attributes[$key])) {

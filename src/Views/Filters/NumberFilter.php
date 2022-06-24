@@ -7,6 +7,9 @@ use Rappasoft\LaravelLivewireTables\Views\Filter;
 
 class NumberFilter extends Filter
 {
+    /**
+     * @return false|numeric
+     */
     public function validate($value)
     {
         return is_numeric($value) ? $value : false;
@@ -17,6 +20,9 @@ class NumberFilter extends Filter
         return $value === '';
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function render(DataTableComponent $component)
     {
         return view('livewire-tables::components.tools.filters.number', [

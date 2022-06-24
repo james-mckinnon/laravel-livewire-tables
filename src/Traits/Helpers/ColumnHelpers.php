@@ -123,10 +123,7 @@ trait ColumnHelpers
         return $this->shouldCollapseOnMobile() + $this->shouldCollapseOnTablet() > 0;
     }
 
-    /**
-     * @return bool
-     */
-    public function shouldCollapseOnMobile(): bool
+    public function shouldCollapseOnMobile(): int
     {
         return $this->getCollapsedMobileColumnsCount();
     }
@@ -167,10 +164,7 @@ trait ColumnHelpers
         return $this->getVisibleMobileColumns()->count();
     }
 
-    /**
-     * @return bool
-     */
-    public function shouldCollapseOnTablet(): bool
+    public function shouldCollapseOnTablet(): int
     {
         return $this->getCollapsedTabletColumnsCount();
     }

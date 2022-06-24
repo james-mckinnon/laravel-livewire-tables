@@ -77,9 +77,11 @@ trait BulkActionsHelpers
     }
 
     /**
-     * @return bool
+     * @return int
+     *
+     * @psalm-return 0|positive-int
      */
-    public function hasBulkActions(): bool
+    public function hasBulkActions()
     {
         return count($this->bulkActions());
     }
@@ -134,10 +136,7 @@ trait BulkActionsHelpers
         return $this->selected;
     }
 
-    /**
-     * @return bool
-     */
-    public function hasSelected(): bool
+    public function hasSelected(): int
     {
         return $this->getSelectedCount();
     }

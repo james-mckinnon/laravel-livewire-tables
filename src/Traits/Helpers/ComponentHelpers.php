@@ -56,9 +56,6 @@ trait ComponentHelpers
         return $this->model;
     }
 
-    /**
-     * @return string
-     */
     public function setTheme(): void
     {
         $theme = $this->getTheme();
@@ -162,9 +159,9 @@ trait ComponentHelpers
     /**
      * Get the translated empty message of the table
      *
-     * @return string
+     * @return array|null|string
      */
-    public function getEmptyMessage(): string
+    public function getEmptyMessage()
     {
         return __($this->emptyMessage);
     }
@@ -270,9 +267,7 @@ trait ComponentHelpers
     }
 
     /**
-     * @param  string  $name
-     *
-     * @return string
+     * @param string  $name
      */
     public function getCollapsingColumnsStatus(): bool
     {

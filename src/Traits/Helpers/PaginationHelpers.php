@@ -77,9 +77,9 @@ trait PaginationHelpers
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getComputedPageName(): string
+    public function getComputedPageName(): ?string
     {
         $pageName = 'page';
 

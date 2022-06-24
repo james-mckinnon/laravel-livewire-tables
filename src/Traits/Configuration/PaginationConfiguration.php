@@ -7,11 +7,9 @@ use Rappasoft\LaravelLivewireTables\Exceptions\DataTableConfigurationException;
 trait PaginationConfiguration
 {
     /**
-    * @param  string  $name
-    *
-    * @return string
-    */
-    public function setPageName(string $name): self
+     * @param string  $name
+     */
+    public function setPageName(string $name): \Rappasoft\LaravelLivewireTables\DataTableComponent
     {
         $this->pageName = $name;
 

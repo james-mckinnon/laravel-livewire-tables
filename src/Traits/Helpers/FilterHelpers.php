@@ -53,12 +53,12 @@ trait FilterHelpers
         return $this->getFilterPillsStatus() === false;
     }
 
-    public function hasFilters(): bool
+    public function hasFilters(): int
     {
         return $this->getFilters()->count();
     }
 
-    public function hasVisibleFilters(): bool
+    public function hasVisibleFilters(): int
     {
         return $this->getFilters()
             ->reject(fn (Filter $filter) => $filter->isHiddenFromMenus())
@@ -118,12 +118,17 @@ trait FilterHelpers
         return $this->{$this->getTableName()}['filters'] ?? [];
     }
 
-    public function hasAppliedFiltersWithValues(): bool
+    /**
+     * @return int
+     *
+     * @psalm-return 0|positive-int
+     */
+    public function hasAppliedFiltersWithValues()
     {
         return count($this->getAppliedFiltersWithValues());
     }
 
-    public function hasAppliedVisibleFiltersWithValuesThatCanBeCleared(): bool
+    public function hasAppliedVisibleFiltersWithValuesThatCanBeCleared(): int
     {
         return collect($this->getAppliedFiltersWithValues())
             ->map(fn ($_item, $key) => $this->getFilterByKey($key))
@@ -139,7 +144,7 @@ trait FilterHelpers
             ->count();
     }
 
-    public function hasAppliedVisibleFiltersForPills(): bool
+    public function hasAppliedVisibleFiltersForPills(): int
     {
         return collect($this->getAppliedFiltersWithValues())
             ->map(fn ($_item, $key) => $this->getFilterByKey($key))

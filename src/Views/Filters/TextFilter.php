@@ -21,6 +21,9 @@ class TextFilter extends Filter
         return $value === '';
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function render(DataTableComponent $component)
     {
         return view('livewire-tables::components.tools.filters.text-field', [

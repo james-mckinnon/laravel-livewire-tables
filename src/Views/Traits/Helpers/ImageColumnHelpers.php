@@ -10,7 +10,7 @@ trait ImageColumnHelpers
         return $this->locationCallback;
     }
 
-    public function hasLocationCallback()
+    public function hasLocationCallback(): bool
     {
         return $this->locationCallback !== null;
     }
@@ -20,7 +20,7 @@ trait ImageColumnHelpers
         return $this->attributesCallback;
     }
 
-    public function hasAttributesCallback()
+    public function hasAttributesCallback(): bool
     {
         return $this->attributesCallback !== null;
     }

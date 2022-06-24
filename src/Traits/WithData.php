@@ -36,6 +36,11 @@ trait WithData
         return $this->applySorting();
     }
 
+    /**
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     *
+     * @psalm-return \Illuminate\Contracts\Pagination\LengthAwarePaginator|\Illuminate\Database\Eloquent\Collection|array<\Illuminate\Database\Eloquent\Builder>
+     */
     protected function executeQuery()
     {
         return $this->paginationIsEnabled() ?

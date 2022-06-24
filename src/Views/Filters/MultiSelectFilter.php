@@ -70,6 +70,9 @@ class MultiSelectFilter extends Filter
         return ! is_array($value);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function render(DataTableComponent $component)
     {
         return view('livewire-tables::components.tools.filters.multi-select', [

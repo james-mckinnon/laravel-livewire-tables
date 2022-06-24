@@ -10,7 +10,7 @@ trait LinkColumnHelpers
         return $this->titleCallback;
     }
 
-    public function hasTitleCallback()
+    public function hasTitleCallback(): bool
     {
         return $this->titleCallback !== null;
     }
@@ -20,7 +20,7 @@ trait LinkColumnHelpers
         return $this->locationCallback;
     }
 
-    public function hasLocationCallback()
+    public function hasLocationCallback(): bool
     {
         return $this->locationCallback !== null;
     }
@@ -30,7 +30,7 @@ trait LinkColumnHelpers
         return $this->attributesCallback;
     }
 
-    public function hasAttributesCallback()
+    public function hasAttributesCallback(): bool
     {
         return $this->attributesCallback !== null;
     }
